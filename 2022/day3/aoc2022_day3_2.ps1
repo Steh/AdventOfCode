@@ -14,7 +14,7 @@ $file_content = Get-Content $file
 $line_count_in_file = ($file_content | Measure-Object -Line).Lines
 
 for($i = 0; $i -lt ($line_count_in_file +1)) {
-    $i
+
     # creat substrings
     $line_part_a = $file_content[$i]
     $line_part_b = $file_content[$i + 1]
@@ -28,8 +28,6 @@ for($i = 0; $i -lt ($line_count_in_file +1)) {
             #"True: " + $char_a + " " + $line_part_b
 
                 if($line_part_c.contains($char_a)){
-                    "True: " + $char_a + " " + $line_part_b
-                    "True: " + $char_a + " " + $line_part_c
                     $score += $alphabet.IndexOf($char_a)
                     break
                 }
