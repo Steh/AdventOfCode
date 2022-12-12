@@ -89,11 +89,11 @@ foreach ($line in $file) {
         }
 
         # reverse the string
-        $substringReverse = $substring.ToCharArray()
-        [array]::Reverse($substringReverse)
-        $substringReverse = -join($substringReverse)
+        #$substringReverse = $substring.ToCharArray()
+        #[array]::Reverse($substringReverse)
+        #$substringReverse = -join($substringReverse)
 
-        "   substring: " + $substringReverse
+        "   substring: " + $substring
         "   target: " + $working_array[$target_line_number -1]
 
         $working_array[$target_line_number -1] += $substring
