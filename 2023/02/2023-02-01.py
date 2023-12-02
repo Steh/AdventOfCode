@@ -4,13 +4,14 @@ red_condition = 12
 green_condition = 13 
 blue_condition = 14
 
+# counter for possible games and sum of round number
 possible_games = 0
 possible_games_sum = 0
 
-
+# read input
 file = open("input", "r")
 
-
+# loop through lines
 for line in file:
     # split to extract game number
     temp_split = line.split(':')
@@ -20,16 +21,20 @@ for line in file:
     # split the rounds
     rounds = temp_split[1].split(';')
 
-    # round possible counter
+    # game possible boolean
     possible_game= 1
 
     #print(game)
     # loop throught new
     for round in rounds:
+        # round possible boolean
         possible_round = 1
         colors = round.split(',')
 
+        # loop color
+        # if cube count for one color is higher than the condition game is not possible
         for color in colors:
+            
             if color.__contains__('red'):
                 number_red = int(((color.strip()).split(' '))[0])
 
@@ -51,10 +56,11 @@ for line in file:
                     possible_round = 0
                     continue
         
+        # if round is not possible set game is not possible
         if possible_round == 0:
             possible_game = 0
     
-
+    # if game is possible add vales to the counters
     if possible_game == 1:
         possible_games += 1
         possible_games_sum += game_number

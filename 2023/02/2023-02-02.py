@@ -10,16 +10,20 @@ for line in file:
     # split the rounds
     rounds = temp_split[1].split(';')
 
-    #print(game)
-    # loop throught new
+    # reset values for highest number per round
     red_min_counter = 0
     blue_min_counter = 0
     green_min_counter = 0
 
+    # loop throught rounds per game
     for round in rounds:
+        # split colors
         colors = round.split(',')
 
+        # loop throught colors per round
+        # find the highest numer per round for each color
         for color in colors:
+            
             if color.__contains__('red'):
                 number_red = int(((color.strip()).split(' '))[0])
 
@@ -37,12 +41,12 @@ for line in file:
 
                 if number_blue > blue_min_counter:
                     blue_min_counter = number_blue
-    # END for round in rounds:
+    # END: for round in rounds:
 
     round_result = red_min_counter * green_min_counter * blue_min_counter
 
     result += round_result
 
-# END for line in file:
+# END: for line in file:
 
 print(result)

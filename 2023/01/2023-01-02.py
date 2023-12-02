@@ -10,6 +10,7 @@ for line in file:
     temp = ''
     
     #replace the writen numbers with its digits
+    # if you don´t write the names back other numbers will get cut like: oneight
     line = line.replace("one", "one1one")
     line = line.replace("two", "two2two")
     line = line.replace("three", "three3three")
@@ -29,5 +30,4 @@ for line in file:
     # add first and last number to output
     output +=  int(temp[0]+temp[-1])
 
-#52840
 print(output)
